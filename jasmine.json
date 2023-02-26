@@ -1,0 +1,10 @@
+{
+    "env": {
+        "failSpecWithNoExpectations": true,
+        "stopSpecOnExpectationFailure": false,
+        "random": true
+    },
+    "helpers": ["jasmine/*.ts"],
+    "spec_dir": "dist",
+    "spec_files": ["**/*[sS]pec.js"]
+}

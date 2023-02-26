@@ -1,0 +1,46 @@
+{
+  "root": true,
+  "ignorePatterns": ["projects/**/*"],
+  "plugins": ["simple-import-sort"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "parserOptions": {
+        "project": ["tsconfig.json"],
+        "createDefaultProgram": true
+      },
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended"
+      ],
+      "rules": {
+        "eqeqeq": ["error", "always"],
+        "simple-import-sort/imports": [
+          "error",
+          {
+            "groups": [
+              // Side effect imports
+              ["^\\u0000"],
+              // 3rd party imports
+              // Things that start with a letter, digit, underscore, or `@` followed by a letter, but do not begin with `src` or a `.`
+              ["^@?\\w", "^(?!src)"],
+              // App imports
+              // Things that begin with `src` or a `.`
+              ["^(src)|^\\."],
+              // Anything else
+              ["^"]
+            ]
+          }
+        ],
+        "@typescript-eslint/explicit-function-return-type": "error",
+        "no-duplicate-imports": "error",
+        "no-redeclare": "error",
+        "no-template-curly-in-string": "error",
+        "prefer-template": "error",
+        "@typescript-eslint/no-unnecessary-type-assertion": "error",
+        "@typescript-eslint/member-ordering": "error"
+      }
+    }
+  ]
+}
