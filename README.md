@@ -54,7 +54,7 @@ or run unit tests:
 
 ## Limitations
 
-The tool does not attempt to validate if the word you input is valid.
+The tool does not attempt to validate if the word you input really exists.
 The user themselves is responsible for checking if their word is present
 in the _Scrabble_ / _Wordfeud_ dictionaries.
 
